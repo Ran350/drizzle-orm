@@ -713,7 +713,9 @@ db.transaction((tx) => { ... }, {
 Drizzle ORM provides a standalone query builder that allows you to build queries without creating a database instance.
 
 ```ts
-import { queryBuilder as qb } from 'drizzle-orm/sqlite-core';
+import { QueryBuilder } from 'drizzle-orm/sqlite-core';
+
+const qb = new QueryBuilder();
 
 const query = qb.select().from(users).where(eq(users.name, 'Dan'));
 const { sql, params } = query.toSQL();
